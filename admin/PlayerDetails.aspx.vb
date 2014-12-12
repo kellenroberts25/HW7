@@ -9,7 +9,13 @@ Partial Class admin_PlayerDetails
 
         Deletedplayerlbl.text = deletedPlayerFirst & " " & deletedPlayerLast & " has been removed from the roster."
 
-        Response.AddHeader("Refresh", "4:URL=./ViewAllPlayers.aspx")
+        Response.AddHeader("Refresh", "3:URL=./ViewAllPlayers.aspx")
+
+    End Sub
+
+    Protected Sub DetailsView1_ItemUpdated(sender As Object, e As DetailsViewUpdatedEventArgs) Handles DetailsView1.ItemUpdated
+
+        Response.AddHeader("Refresh", "3:URL=./ViewAllPlayers.aspx")
 
     End Sub
 End Class

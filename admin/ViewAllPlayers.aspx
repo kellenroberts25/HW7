@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:db_karoberts_HW7 %>" 
         SelectCommand="SELECT * FROM [karoberts_HW7]" DeleteCommand="DELETE FROM [karoberts_HW7] WHERE [PlayerID] = @PlayerID" InsertCommand="INSERT INTO [karoberts_HW7] ([FirstName], [LastName], [Age], [Position], [Salary], [WinsAboveReplacement], [AllStar]) VALUES (@FirstName, @LastName, @Age, @Position, @Salary, @WinsAboveReplacement, @AllStar)" UpdateCommand="UPDATE [karoberts_HW7] SET [FirstName] = @FirstName, [LastName] = @LastName, [Age] = @Age, [Position] = @Position, [Salary] = @Salary, [WinsAboveReplacement] = @WinsAboveReplacement, [AllStar] = @AllStar WHERE [PlayerID] = @PlayerID">
@@ -30,21 +29,24 @@
             <asp:Parameter Name="PlayerID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <br />
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="PlayerID">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="PlayerID" HeaderText="PlayerID" SortExpression="PlayerID" InsertVisible="False" ReadOnly="True" />
-            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
-            <asp:BoundField DataField="Age" HeaderText="Age" SortExpression="Age" />
-            <asp:BoundField DataField="Position" HeaderText="Position" SortExpression="Position" />
-            <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" />
-            <asp:BoundField DataField="WinsAboveReplacement" HeaderText="WinsAboveReplacement" SortExpression="WinsAboveReplacement" />
-            <asp:BoundField DataField="AllStar" HeaderText="AllStar" SortExpression="AllStar" />
-        </Columns>
-    </asp:GridView>
+<br />
+<br />
+<div style="padding-left:25px;">
+<asp:GridView ID="GridView1" runat="server" width="700px" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" DataKeyNames="PlayerID">
+    <Columns>
+        <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
+        <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
+        <asp:BoundField DataField="Age" HeaderText="Age" SortExpression="Age" />
+        <asp:BoundField DataField="Position" HeaderText="Position" SortExpression="Position" />
+        <asp:HyperLinkField DataNavigateUrlFields="playerID" DataNavigateUrlFormatString="PlayerDetails.aspx?playerID={0}" Text="Select" />
+    </Columns>
+</asp:GridView>
+</div>
+<br />
+<br />
+<br />
+
+
 
 
 </asp:Content>
-

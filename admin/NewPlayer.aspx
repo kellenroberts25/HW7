@@ -37,7 +37,7 @@
     </asp:SqlDataSource>
 
     <br />
-
+<div style="padding-left:25px;"
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="PlayerID" DataSourceID="SqlDataSource1" CellPadding="5" CellSpacing="10" DefaultMode="Insert" HorizontalAlign="Justify">
        
         <InsertItemTemplate>
@@ -131,7 +131,7 @@
             </ItemTemplate>
     </asp:FormView>
 
-
+    </div>
 
 
 </asp:Content>
