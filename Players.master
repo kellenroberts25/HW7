@@ -6,7 +6,7 @@
 <head runat="server">
     <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
     
-    <title>2012 New York Yankees</title>
+    <title>2012 New York Yankees Scott</title>
 
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
